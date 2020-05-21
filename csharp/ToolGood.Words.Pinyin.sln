@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolGood.Words.Pinyin", "ToolGood.Words.Pinyin\ToolGood.Words.Pinyin.csproj", "{312A21E3-1770-4941-A742-81722618B553}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_test", "_test", "{8015DB9A-57DB-465B-AF58-3F1783077BA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolGood.Words.Pinyin.Test", "ToolGood.Words.Pinyin.Test\ToolGood.Words.Pinyin.Test.csproj", "{5224D70C-DEA0-4291-B309-80D64F60789D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{312A21E3-1770-4941-A742-81722618B553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{312A21E3-1770-4941-A742-81722618B553}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{312A21E3-1770-4941-A742-81722618B553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{312A21E3-1770-4941-A742-81722618B553}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5224D70C-DEA0-4291-B309-80D64F60789D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5224D70C-DEA0-4291-B309-80D64F60789D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5224D70C-DEA0-4291-B309-80D64F60789D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5224D70C-DEA0-4291-B309-80D64F60789D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5224D70C-DEA0-4291-B309-80D64F60789D} = {8015DB9A-57DB-465B-AF58-3F1783077BA9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {29DDEDB0-60EB-4D5F-8C1F-14FCBF26FE49}
+	EndGlobalSection
+EndGlobal
