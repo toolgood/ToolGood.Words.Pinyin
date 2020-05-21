@@ -10,8 +10,8 @@ namespace ToolGood.Words.Pinyin.internals
     {
         protected ushort[] _dict;
         protected int[] _first;
-        protected ushort[] _min;
-        protected ushort[] _max;
+        //protected ushort[] _min;
+        //protected ushort[] _max;
 
         protected IntDictionary[] _nextIndex;
         protected int[] _end;
@@ -55,8 +55,8 @@ namespace ToolGood.Words.Pinyin.internals
 
             var dictLength = br.ReadInt32();
             _nextIndex = new IntDictionary[dictLength];
-            _max = new ushort[dictLength];
-            _min = new ushort[dictLength];
+            //_max = new ushort[dictLength];
+            //_min = new ushort[dictLength];
 
             for (int i = 0; i < dictLength; i++) {
                 length = br.ReadInt32();
@@ -67,19 +67,15 @@ namespace ToolGood.Words.Pinyin.internals
                 bs = br.ReadBytes(length);
                 var values = ByteArrToIntArr(bs);
 
-                var dict = new Dictionary<ushort, int>();
-                for (int j = 0; j < keys.Length; j++) {
-                    dict[keys[j]] = values[j];
-                }
                 IntDictionary dictionary = new IntDictionary();
-                dictionary.SetDictionary(dict);
+                dictionary.SetDictionary(keys, values);
                 _nextIndex[i] = dictionary;
-                if (length == 0) {
-                    _min[i] = ushort.MaxValue;
-                } else {
-                    _max[i] = keys[keys.Length - 1];
-                    _min[i] = keys[0];
-                }
+                //if (length == 0) {
+                //    _min[i] = ushort.MaxValue;
+                //} else {
+                //    _max[i] = keys[keys.Length - 1];
+                //    _min[i] = keys[0];
+                //}
             }
         }
 
@@ -119,7 +115,7 @@ namespace ToolGood.Words.Pinyin.internals
                     continue;
                 }
                 int next;
-                if (p == 0 || t < _min[p] || t > _max[p] || _nextIndex[p].TryGetValue(t, out next) == false) {
+                if (p == 0 || /*t < _min[p] || t > _max[p] || */_nextIndex[p].TryGetValue(t, out next) == false) {
                     next = _first[t];
                 }
                 if (next != 0) {

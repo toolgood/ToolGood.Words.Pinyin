@@ -25,13 +25,10 @@ namespace ToolGood.Words.Pinyin.internals
             }
         }
 
-        public void SetDictionary(Dictionary<ushort, int> dict)
+        public void SetDictionary(ushort[] keys,int[] values)
         {
-            _keys = dict.Select(q => q.Key).OrderBy(q => q).ToArray();
-            _values = new int[_keys.Length];
-            for (int i = 0; i < _keys.Length; i++) {
-                _values[i] = dict[_keys[i]];
-            }
+            _keys = keys;
+            _values = values;
             last = _keys.Length - 1;
         }
 
@@ -45,10 +42,16 @@ namespace ToolGood.Words.Pinyin.internals
             if (_keys[0] == key) {
                 value = _values[0];
                 return true;
+            } else if (_keys[0] > key) {
+                value = 0;
+                return false;
             }
             if (_keys[last] == key) {
                 value = _values[last];
                 return true;
+            } else if (_keys[last] < key) {
+                value = 0;
+                return false;
             }
 
             var left = 0;
