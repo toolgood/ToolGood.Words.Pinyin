@@ -11,7 +11,7 @@ namespace ToolGood.Words.Pinyin.internals
     /// </summary>
     public class WordsSearch : BaseSearch
     {
-        internal string[] _others;
+        //internal string[] _others;
 
         #region 查找 替换 查找第一个关键字 判断是否包含关键字
         /// <summary>

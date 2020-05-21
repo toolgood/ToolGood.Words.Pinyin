@@ -188,18 +188,11 @@ namespace ToolGood.Words.Pinyin.internals
                         bs = reader.ReadBytes(length);
                         _wordPy = ByteArrToUint16Arr(bs);
 
+                        var search = new WordsSearchEx();
+                        search.Load(reader);
+
                         reader.Close();
                         sm.Close();
-
-#if NETSTANDARD2_1
-                        Stream sm2 = ass.GetManifestResourceStream("ToolGood.Words.Pinyin.dict.PinyinWord.dat.br");
-#else
-                        Stream sm2 = ass.GetManifestResourceStream("ToolGood.Words.Pinyin.dict.PinyinWord.dat.z");
-#endif
-                        var sm22 = Decompress(sm2);
-                        var search = new WordsSearchEx();
-                        search.Load(sm22);
-                        sm2.Close();
                         _search = search;
                     }
                 }

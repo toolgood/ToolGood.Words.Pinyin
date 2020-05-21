@@ -36,8 +36,6 @@ namespace ToolGood.Words.Pinyin.internals
         {
             var length = br.ReadInt32();
             _keywordLength = br.ReadBytes(length);
-            //_keywordLength = ByteArrToshortArr(bs);
-
 
             length = br.ReadInt32();
             var bs = br.ReadBytes(length);
@@ -57,8 +55,8 @@ namespace ToolGood.Words.Pinyin.internals
 
             var dictLength = br.ReadInt32();
             _nextIndex = new IntDictionary[dictLength];
-            List<ushort> max = new List<ushort>();
-            List<ushort> min = new List<ushort>();
+            _max = new ushort[dictLength];
+            _min = new ushort[dictLength];
 
             for (int i = 0; i < dictLength; i++) {
                 length = br.ReadInt32();
@@ -77,15 +75,12 @@ namespace ToolGood.Words.Pinyin.internals
                 dictionary.SetDictionary(dict);
                 _nextIndex[i] = dictionary;
                 if (length == 0) {
-                    max.Add(0);
-                    min.Add(ushort.MaxValue);
+                    _min[i] = ushort.MaxValue;
                 } else {
-                    max.Add(keys.Last());
-                    min.Add(keys[0]);
+                    _max[i] = keys[keys.Length - 1];
+                    _min[i] = keys[0];
                 }
             }
-            _max = max.ToArray();
-            _min = min.ToArray();
         }
 
         protected Int32[] ByteArrToIntArr(byte[] btArr)
