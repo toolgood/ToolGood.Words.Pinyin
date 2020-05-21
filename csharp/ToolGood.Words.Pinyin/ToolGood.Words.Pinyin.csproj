@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <Description>一款高性能汉字转拼音类库，从ToolGood.Words独立出来，专注性能效率。</Description>
+    <Description>一款高性能汉字转拼音类库，从ToolGood.Words独立出来，专注初始加载效率，支持范围为[0x3400,0x4DB5] [0x4E00,0x9FA5]。</Description>
     <Copyright>Copyright 2017-2020 ToolGood</Copyright>
     <AssemblyTitle>ToolGood.Words.Pinyin</AssemblyTitle>
     <VersionPrefix>2.0.0</VersionPrefix>
