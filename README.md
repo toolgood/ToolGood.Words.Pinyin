@@ -1,7 +1,7 @@
 ﻿# ToolGood.Words.Pinyin
 
 
-一款高性能拼音字母转化类，是`ToolGood.Words`拼音分支，追求快速加载速度。
+一款高性能拼音字母转化类，是`ToolGood.Words`拼音分支，追求极致加载速度。
 
 `ToolGood.Words.Pinyin`支持范围 [0x3400,0x4DB5] [0x4E00,0x9FA5]
 
