@@ -23,6 +23,8 @@ namespace ToolGood.Words.Pinyin2.Test.FirstPinyinTests
             b = WordsHelper.GetFirstPinyin("秘鲁");
             Assert.AreEqual("BL", b);
 
+            b = WordsHelper.GetFirstPinyin("天行");
+            Assert.AreEqual("TX", b);
 
             var py = WordsHelper.GetFirstPinyin("快乐，乐清");
             Assert.AreEqual("KL，YQ", py);

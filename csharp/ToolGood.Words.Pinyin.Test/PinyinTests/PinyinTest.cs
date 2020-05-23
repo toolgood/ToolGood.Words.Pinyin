@@ -21,6 +21,8 @@ namespace ToolGood.Words.Pinyin.Test
             b = WordsHelper.GetPinyin("秘鲁");
             Assert.AreEqual("BiLu", b);
 
+            b = WordsHelper.GetPinyin("天行");
+            Assert.AreEqual("TianXing", b);
 
             var py = WordsHelper.GetPinyin("快乐，乐清");
             Assert.AreEqual("KuaiLe，YueQing", py);
