@@ -16,7 +16,6 @@
 
 ### ToolGood.Words.Pinyin  拼音模块
 ``` csharp
- 
     // 获取全拼
     WordsHelper.GetPinyin("我爱中国");//WoAiZhongGuo   
     WordsHelper.GetPinyin("我爱中国",",");//Wo,Ai,Zhong,Guo   
@@ -27,9 +26,11 @@
     // 获取全部拼音
     WordsHelper.GetAllPinyin('传');//Chuan,Zhuan
     // 获取姓名
-    WordsHelper.GetPinyinForName("单一一")//ShanYiYi
-    WordsHelper.GetPinyinForName("单一一",",")//Shan,Yi,Yi
-    WordsHelper.GetPinyinForName("单一一",true)//ShànYīYī
+    WordsHelper.GetPinyinForName("单一一");//ShanYiYi
+    WordsHelper.GetPinyinForName("单一一",",");//Shan,Yi,Yi
+    WordsHelper.GetPinyinForName("单一一",true);//ShànYīYī
+    // 清理拼音缓存
+    WordsHelper.ClearCache();
 ``` 
 
 ### ToolGood.Words.Pinyin 拼音匹配
@@ -72,6 +73,9 @@
 
     WordsHelper.GetFirstPinyinForName("单一一");//SYY
     WordsHelper.GetFirstPinyinForName("单一一", ",");//S,Y,Y
+
+    // 清理拼音缓存
+    WordsHelper.ClearCache();
 ``` 
 
 

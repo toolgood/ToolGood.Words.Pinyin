@@ -110,7 +110,6 @@ namespace ToolGood.Words.Pinyin.internals
                 first[item.Key] = item.Value;
             }
             _first = first;
-            _allNode2 = allNode2;
         }
 
     }
