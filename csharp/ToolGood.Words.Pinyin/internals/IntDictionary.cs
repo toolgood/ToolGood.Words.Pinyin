@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ToolGood.Words.Pinyin.internals
 {
-    public class IntDictionary
+    public class IntDictionary : IDisposable
     {
         private ushort[] _keys;
         private int[] _values;
@@ -23,6 +24,13 @@ namespace ToolGood.Words.Pinyin.internals
             get {
                 return _values;
             }
+        }
+ 
+        public void Dispose()
+        {
+            _keys = null;
+            _values = null;
+            GC.SuppressFinalize(this);
         }
 
         public void SetDictionary(ushort[] keys,int[] values)

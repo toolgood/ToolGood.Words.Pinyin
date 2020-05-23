@@ -211,5 +211,26 @@ namespace ToolGood.Words.FirstPinyin.internals
         }
         #endregion
 
+
+        public static void ClearCache()
+        {
+            lock (lockObj) {
+                if (_pyName != null) {
+                    _pyName.Clear();
+                    _pyName = null;
+                }
+                _pyShow = null;
+                _pyIndex = null;
+                _pyData = null;
+                _wordPyIndex = null;
+                _wordPy = null;
+                if (_search != null) {
+                    _search.Dispose();
+                    _search = null;
+                }
+                GC.Collect();
+            }
+        }
+
     }
 }

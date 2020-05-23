@@ -53,7 +53,7 @@ namespace ToolGood.Words.Pinyin2.Test.FirstPinyinTests
             py = WordsHelper.GetFirstPinyinForName("单一一", ",");
             Assert.AreEqual("S,Y,Y", py);
 
-    
+            WordsHelper.ClearCache();
 
         }
 

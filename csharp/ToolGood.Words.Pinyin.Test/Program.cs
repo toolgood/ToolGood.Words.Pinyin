@@ -12,7 +12,7 @@ namespace ToolGood.Words.Pinyin.Test
             stopwatch.Stop();
             var s = stopwatch.ElapsedMilliseconds;
             Console.WriteLine(s);
-            GC.Collect();
+            FirstPinyin.WordsHelper.ClearCache();
             PetaTest.Runner.RunMain(args);
         }
     }

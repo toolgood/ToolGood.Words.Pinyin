@@ -5,11 +5,12 @@ using System.Text;
 
 namespace ToolGood.Words.Pinyin.internals
 {
-    public abstract class BaseSearch
+    public abstract class BaseSearch 
     {
         protected internal TrieNode2[] _first = new TrieNode2[char.MaxValue + 1];
         protected internal string[] _keywords;
 
+ 
         /// <summary>
         /// 设置关键字
         /// </summary>
@@ -109,6 +110,7 @@ namespace ToolGood.Words.Pinyin.internals
                 first[item.Key] = item.Value;
             }
             _first = first;
+            _allNode2 = allNode2;
         }
 
     }

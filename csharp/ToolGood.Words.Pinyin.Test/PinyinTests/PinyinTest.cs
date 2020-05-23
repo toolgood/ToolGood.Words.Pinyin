@@ -56,6 +56,8 @@ namespace ToolGood.Words.Pinyin.Test
             py = WordsHelper.GetPinyinForName("单一一", true);
             Assert.AreEqual("ShànYīYī", py);
 
+            WordsHelper.ClearCache();
+
         }
 
 

@@ -6,7 +6,7 @@ using ToolGood.Words.Pinyin.internals;
 
 namespace ToolGood.Words.Pinyin
 {
-    public class WordsHelper
+    public static class WordsHelper
     {
         #region 拼音 操作
         /// <summary>
@@ -162,7 +162,16 @@ namespace ToolGood.Words.Pinyin
 
 
 
+        #region 清理缓存 ClearCache
+        /// <summary>
+        /// 清理缓存
+        /// </summary>
+        public static void ClearCache()
+        {
+            PinyinDict.ClearCache();
+        }
 
+        #endregion
 
     }
 }

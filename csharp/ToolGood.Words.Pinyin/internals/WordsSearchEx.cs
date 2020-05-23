@@ -6,17 +6,17 @@ using System.Text;
 
 namespace ToolGood.Words.Pinyin.internals
 {
-    class WordsSearchEx
+    class WordsSearchEx : IDisposable
     {
-        protected ushort[] _dict;
-        protected int[] _first;
+        private ushort[] _dict;
+        private int[] _first;
         //protected ushort[] _min;
         //protected ushort[] _max;
 
-        protected IntDictionary[] _nextIndex;
-        protected int[] _end;
-        protected int[] _resultIndex;
-        protected byte[] _keywordLength;
+        private IntDictionary[] _nextIndex;
+        private int[] _end;
+        private int[] _resultIndex;
+        private byte[] _keywordLength;
 
 
         #region 加载文件
@@ -131,5 +131,22 @@ namespace ToolGood.Words.Pinyin.internals
             return result;
         }
 
+        public void Dispose()
+        {
+            _dict = null;
+            _first = null;
+            if (_nextIndex != null) {
+                for (int i = 0; i < _nextIndex.Length; i++) {
+                    _nextIndex[i].Dispose();
+                    _nextIndex[i] = null;
+                }
+            }
+            _nextIndex = null;
+            _end = null;
+            _resultIndex = null;
+            _keywordLength = null;
+            GC.SuppressFinalize(this);
+
+        }
     }
 }

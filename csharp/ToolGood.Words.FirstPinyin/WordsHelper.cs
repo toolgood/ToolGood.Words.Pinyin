@@ -130,7 +130,16 @@ namespace ToolGood.Words.FirstPinyin
 
         #endregion
 
+        #region 清理缓存 ClearCache
+        /// <summary>
+        /// 清理缓存
+        /// </summary>
+        public static void ClearCache()
+        {
+            PinyinDict.ClearCache();
+        }
 
+        #endregion
 
 
 
