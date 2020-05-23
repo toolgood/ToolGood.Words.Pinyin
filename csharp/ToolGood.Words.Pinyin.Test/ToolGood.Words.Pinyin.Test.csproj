@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ToolGood.Words.FirstPinyin\ToolGood.Words.FirstPinyin.csproj" />
     <ProjectReference Include="..\ToolGood.Words.PinyinBig\ToolGood.Words.PinyinBig.csproj" />
     <ProjectReference Include="..\ToolGood.Words.Pinyin\ToolGood.Words.Pinyin.csproj" />
   </ItemGroup>

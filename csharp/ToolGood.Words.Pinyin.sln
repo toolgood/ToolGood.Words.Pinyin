@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolGood.Words.Pinyin", "To
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_test", "_test", "{8015DB9A-57DB-465B-AF58-3F1783077BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolGood.Words.Pinyin.Test", "ToolGood.Words.Pinyin.Test\ToolGood.Words.Pinyin.Test.csproj", "{5224D70C-DEA0-4291-B309-80D64F60789D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolGood.Words.Pinyin.Test", "ToolGood.Words.Pinyin.Test\ToolGood.Words.Pinyin.Test.csproj", "{5224D70C-DEA0-4291-B309-80D64F60789D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolGood.Words.FirstPinyin", "ToolGood.Words.FirstPinyin\ToolGood.Words.FirstPinyin.csproj", "{3680E9A1-2E69-427D-806F-54271E4C1F69}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{5224D70C-DEA0-4291-B309-80D64F60789D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5224D70C-DEA0-4291-B309-80D64F60789D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5224D70C-DEA0-4291-B309-80D64F60789D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3680E9A1-2E69-427D-806F-54271E4C1F69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3680E9A1-2E69-427D-806F-54271E4C1F69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3680E9A1-2E69-427D-806F-54271E4C1F69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3680E9A1-2E69-427D-806F-54271E4C1F69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
