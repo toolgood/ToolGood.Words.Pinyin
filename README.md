@@ -79,11 +79,32 @@
 ``` 
 
 
-## 捐赠
+## 广告一下
 
-如果这个类库有帮助到您，请 Star 这个仓库。
+《ToolGood 内容审核系统》正式发布，Windows、Linux双平台，内存占用小于100M。
 
-你也可以选择使用支付宝或微信给我捐赠：
+官网：https://toolgood.com/
 
-![Alipay, WeChat](https://toolgood.github.io/image/toolgood.png)
+内存少了，功能却不少，可以下文字去官网测试。拼接后的脏字有26303904组（约2630W）。
+
+```
+c C ⒞ ｃ ⓒ C Ｃ ℂ Ⓒ с С 𝐜 𝑐 𝚌 𝒸 𝒄 𝓬 𝕔 𝖼 𝗰 𝘤 𝙘 𝐂 𝐶 𝙲 𝒞 𝑪 𝓒 𝖢 𝗖 𝘊 𝘾 ©
+a A ⒜ ā á ǎ à ａ ⓐ A Ａ Ⓐ а А 𝐚 𝑎 𝚊 𝒶 𝒂 𝓪 𝕒 𝖺 𝗮 𝘢 𝙖 𝐀 𝐴 𝙰 𝒜 𝑨 𝓐 𝔸 𝖠 𝗔 𝘈 𝘼 Α α
+o O ⒪ ō ó ǒ ò ｏ ⓞ O Ｏ Ⓞ о О 𝐨 𝑜 𝚘 𝒐 𝓸 𝕠 𝗈 𝗼 𝘰 𝙤 𝐎 𝑂 𝙾 𝒪 𝑶 𝓞 𝕆 𝖮 𝗢 𝘖 𝙊 Ο ο σ
+㚷 伱 你 倪 呢 妮 妳 尼 您 拟 昵 汝 沵 泥 祢 迩 铌 鉨 your you 亻尓 女尓 ni
+㐷 吗 嘛 妈 娘 嫲 嬷 杩 溤 犘 犸 玛 痲 码 祃 蔴 蚂 马 骂 鰢 鷌 麻 嚒 ma
+```
+
+## 敏感词相关文章
+1、[敏感词过滤方案那些事](https://www.cnblogs.com/toolgood/p/15208734.html)
+
+2、[普通公司敏感词审核制度](https://www.cnblogs.com/toolgood/p/15213549.html)
+
+3、[新人小白过滤敏感词方案](https://www.cnblogs.com/toolgood/p/15251918.html)
+
+4、网络常用敏感词过滤方法
+
+5、ToolGood.Words算法过滤敏感词优化原理
+
+6、敏感词过滤中常遇的几个问题
 
