@@ -19,7 +19,7 @@
     <RootNamespace>ToolGood.Words.Pinyin</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>3.0.2.6</Version>
+    <Version>3.0.3.1</Version>
     <PackageReleaseNotes></PackageReleaseNotes>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
