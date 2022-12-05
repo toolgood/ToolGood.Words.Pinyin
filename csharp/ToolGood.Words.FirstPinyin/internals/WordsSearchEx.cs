@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace ToolGood.Words.FirstPinyin.internals
 {
@@ -10,8 +8,6 @@ namespace ToolGood.Words.FirstPinyin.internals
     {
         private ushort[] _dict;
         private int[] _first;
-        //protected ushort[] _min;
-        //protected ushort[] _max;
 
         private IntDictionary[] _nextIndex;
         private int[] _end;
@@ -55,8 +51,6 @@ namespace ToolGood.Words.FirstPinyin.internals
 
             var dictLength = br.ReadInt32();
             _nextIndex = new IntDictionary[dictLength];
-            //_max = new ushort[dictLength];
-            //_min = new ushort[dictLength];
 
             for (int i = 0; i < dictLength; i++) {
                 length = br.ReadInt32();
@@ -67,15 +61,8 @@ namespace ToolGood.Words.FirstPinyin.internals
                 bs = br.ReadBytes(length);
                 var values = ByteArrToIntArr(bs);
 
-                IntDictionary dictionary = new IntDictionary();
-                dictionary.SetDictionary(keys, values);
+                IntDictionary dictionary = new IntDictionary(keys, values);
                 _nextIndex[i] = dictionary;
-                //if (length == 0) {
-                //    _min[i] = ushort.MaxValue;
-                //} else {
-                //    _max[i] = keys[keys.Length - 1];
-                //    _min[i] = keys[0];
-                //}
             }
         }
 
@@ -115,12 +102,13 @@ namespace ToolGood.Words.FirstPinyin.internals
                     continue;
                 }
                 int next;
-                if (p == 0 || /*t < _min[p] || t > _max[p] || */_nextIndex[p].TryGetValue(t, out next) == false) {
+                if (p == 0 || _nextIndex[p].TryGetValue(t, out next) == false) {
                     next = _first[t];
                 }
                 if (next != 0) {
-                    for (int j = _end[next]; j < _end[next + 1]; j++) {
-                        var index = _resultIndex[j];
+                    var start = _end[next];
+                    if (start < _end[next + 1]) { //只取第一个
+                        var index = _resultIndex[start];
                         var l = _keywordLength[index];
                         var r = new WordsSearchResult(i + 1 - l, i, index, l);
                         result.Add(r);
@@ -135,12 +123,6 @@ namespace ToolGood.Words.FirstPinyin.internals
         {
             _dict = null;
             _first = null;
-            if (_nextIndex!=null) {
-                for (int i = 0; i < _nextIndex.Length; i++) {
-                    _nextIndex[i].Dispose();
-                    _nextIndex[i] = null;
-                }
-            }
             _nextIndex = null;
             _end = null;
             _resultIndex = null;

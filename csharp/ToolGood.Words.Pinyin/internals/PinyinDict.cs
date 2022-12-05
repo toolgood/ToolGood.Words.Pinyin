@@ -4,11 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
-#if NETSTANDARD2_1
 using ZIPStream = System.IO.Compression.BrotliStream;
-#else
-using ZIPStream = System.IO.Compression.GZipStream;
-#endif
 
 namespace ToolGood.Words.Pinyin.internals
 {
@@ -150,11 +146,7 @@ namespace ToolGood.Words.Pinyin.internals
                 lock (lockObj) {
                     if (_search == null) {
                         var ass = typeof(WordsHelper).Assembly;
-#if NETSTANDARD2_1
                         Stream sm = ass.GetManifestResourceStream("ToolGood.Words.Pinyin.dict.Pinyin.dat.br");
-#else
-                        Stream sm = ass.GetManifestResourceStream("ToolGood.Words.Pinyin.dict.Pinyin.dat.z");
-#endif
                         var sm12 = Decompress(sm);
                         BinaryReader reader = new BinaryReader(sm12);
                         _pyName = new Dictionary<string, ushort[]>();

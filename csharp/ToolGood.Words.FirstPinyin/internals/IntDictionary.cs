@@ -4,30 +4,17 @@ using System.Linq;
 
 namespace ToolGood.Words.FirstPinyin.internals
 {
-    public class IntDictionary: IDisposable
+    public struct IntDictionary
     {
         private ushort[] _keys;
         private int[] _values;
         private int last;
-        public IntDictionary()
-        {
-            last = -1;
-        }
-
-        public void Dispose()
-        {
-            _keys = null;
-            _values = null;
-            GC.SuppressFinalize(this);
-        }
-
-        public void SetDictionary(ushort[] keys,int[] values)
+        public IntDictionary(ushort[] keys, int[] values)
         {
             _keys = keys;
             _values = values;
             last = _keys.Length - 1;
         }
-
 
         public bool TryGetValue(ushort key, out int value)
         {

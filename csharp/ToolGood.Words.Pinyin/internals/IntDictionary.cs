@@ -4,14 +4,16 @@ using System.Linq;
 
 namespace ToolGood.Words.Pinyin.internals
 {
-    public class IntDictionary : IDisposable
+    public struct IntDictionary
     {
         private ushort[] _keys;
         private int[] _values;
         private int last;
-        public IntDictionary()
+        public IntDictionary(ushort[] keys, int[] values)
         {
-            last = -1;
+            _keys = keys;
+            _values = values;
+            last = _keys.Length - 1;
         }
 
         public ushort[] Keys {
@@ -25,21 +27,6 @@ namespace ToolGood.Words.Pinyin.internals
                 return _values;
             }
         }
- 
-        public void Dispose()
-        {
-            _keys = null;
-            _values = null;
-            GC.SuppressFinalize(this);
-        }
-
-        public void SetDictionary(ushort[] keys,int[] values)
-        {
-            _keys = keys;
-            _values = values;
-            last = _keys.Length - 1;
-        }
-
 
         public bool TryGetValue(ushort key, out int value)
         {
